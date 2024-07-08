@@ -1,0 +1,29 @@
+<app-header />
+<div *ngIf="artisan" class="fiche">
+  <div class="donner">
+    <h1 class="title">{{ artisan.name }}</h1>
+    <p>
+      Note : {{ artisan.note }} / 5<br />
+      Spécialité : {{ artisan.specialty }}<br />
+      Localisation : {{ artisan.location }}
+    </p>
+    <h2 class="title red">A propos</h2>
+    <p>{{ artisan.about }}</p>
+  </div>
+  <div class="contact">
+    <h2 class="title grey">Contactez-moi</h2>
+    <form>
+      <label for="name" class="titre">Nom :</label><br />
+      <input type="text" class="input" id="name" name="name" /><br />
+      <label for="subject" class="titre">Objet :</label><br />
+      <input type="text" class="input" id="subject" name="subject" /><br />
+      <label for="message" class="titre">Message :</label><br />
+      <textarea id="message" class="mess" name="message"></textarea><br />
+      <input type="submit" value="Envoyer" />
+    </form>
+    <p *ngIf="artisan.website">
+      Site web : <a [href]="artisan.website">{{ artisan.website }}</a>
+    </p>
+  </div>
+</div>
+<app-footer />

@@ -1,0 +1,53 @@
+.logo {
+  width: 300px;
+  height: 150px;
+}
+a {
+  color: #384050;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: #384050;
+  text-decoration-thickness: 2px;
+}
+nav {
+  background-color: #f1f8fc;
+}
+
+.recherche {
+  padding: 10px;
+  background-color: #f1f8fc;
+  border-bottom: 1px solid #0074c7;
+  border-right: 1px solid #0074c7;
+  border-top: none;
+  border-left: none;
+  padding: 5px;
+  top: 1.5rem;
+  right: 3rem;
+  max-width: 12rem;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0;
+}
+
+.loupe {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.loupe:hover {
+  background-color: #00497c;
+}
+.nav {
+  display: flex;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+header {
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
+}

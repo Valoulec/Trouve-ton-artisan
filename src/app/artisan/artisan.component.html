@@ -1,0 +1,20 @@
+<app-header />
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let artisan of artisans">
+      <div class="card">
+        <a [routerLink]="['/fiche-artisant', artisan.name]" class="lien">
+          <div class="card-body">
+            <h5 class="card-title">{{ artisan.name }}</h5>
+            <p class="card-text description">
+              Note : {{ artisan.note }} / 5<br />
+              Spécialité : {{ artisan.specialty }}<br />
+              Localisation : {{ artisan.location }}
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer />

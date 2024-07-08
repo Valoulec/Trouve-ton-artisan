@@ -1,1 +1,72 @@
-<p>header works!</p>
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">
+        <img src="../assets/image/Logo.png" alt="Logo" class="logo" />
+      </a>
+      <form class="d-flex search" role="search">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#search"
+          aria-controls="search"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <img src="../../assets/image/loupe.svg" alt="loupe" class="loupe" />
+        </button>
+        <div class="collapse navbar-collapse" id="search">
+          <input
+            class="form-control me-2 recherche custom-search"
+            type="search"
+            placeholder="Rechercher"
+            aria-label="Search"
+          />
+          <input
+            aria-label="Rechercher"
+            id="edit-submit-search"
+            data-drupal-selector="edit-submit"
+            type="submit"
+            value="Rechercher"
+            class="button button--primary js-form-submit form-submit"
+            data-once="aura_core_form_element_invalidated"
+          />
+        </div>
+      </form>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/category/Bâtiment">Bâtiment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/category/Services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/category/Fabrication"
+              >Fabrication</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/category/Alimentation"
+              >Alimentation</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
