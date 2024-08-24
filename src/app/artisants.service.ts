@@ -228,12 +228,13 @@ export class ArtisanService {
       top: false,
     },
   ];
-  getArtisan(category: string): Observable<any[]> {
+  getArtisansByCategory(category: string): Observable<any[]> {
     const artisansByCategory = this.artisans.filter(
       (artisan) => artisan.category === category
     );
     return of(artisansByCategory);
   }
+
   getArtisanByName(name: string): Observable<any> {
     const artisan = this.artisans.find((artisan) => artisan.name === name);
     return of(artisan);
@@ -241,5 +242,17 @@ export class ArtisanService {
   getArtisantByTop(): Observable<any[]> {
     const artisanTop = this.artisans.filter((artisan) => artisan.top === true);
     return of(artisanTop);
+  }
+
+  searchArtisans(term: string): Observable<any[]> {
+    const termLower = term.toLowerCase();
+    return of(
+      this.artisans.filter(
+        (artisan) =>
+          artisan.name.toLowerCase().includes(termLower) ||
+          artisan.specialty.toLowerCase().includes(termLower) ||
+          artisan.location.toLowerCase().includes(termLower)
+      )
+    );
   }
 }

@@ -25,13 +25,15 @@ export class ArtisanComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.category = params['category'];
-      this.getArtisansByCategory();
+      this.getArtisansByCategory(this.category);
     });
   }
 
-  getArtisansByCategory(): void {
+  getArtisansByCategory(category: string): void {
     this.artisanService
-      .getArtisan(this.category)
-      .subscribe((artisans) => (this.artisans = artisans));
+      .getArtisansByCategory(category)
+      .subscribe((artisans) => {
+        this.artisans = artisans;
+      });
   }
 }

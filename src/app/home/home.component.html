@@ -8,7 +8,7 @@
   </div>
   <div class="artisan">
     <h2 class="title red">Les trois artisans du mois :</h2>
-    <div class="row">
+    <div class="row boucle">
       <div *ngFor="let artisan of artisan" class="col-md-4 mb-4">
         <div class="card">
           <a [routerLink]="['/fiche-artisant', artisan.name]">

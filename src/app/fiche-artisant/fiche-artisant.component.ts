@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ActivatedRoute, RouterModule, RouterOutlet } from '@angular/router';
 import { ArtisanService } from '../artisants.service';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
@@ -17,22 +18,46 @@ import { HeaderComponent } from '../header/header.component';
     RouterModule,
     HeaderComponent,
     FooterComponent,
+    RouterOutlet,
   ],
 })
-export class FicheArtisanComponent {
+export class FicheArtisanComponent implements OnInit {
   artisan: any;
 
   constructor(
     private route: ActivatedRoute,
-    private artisanService: ArtisanService
+    private artisanService: ArtisanService,
+    private sanitizer: DomSanitizer
   ) {}
 
-  ngOnInit(): void {
-    const name = this.route.snapshot.paramMap.get('name');
-    if (name !== null) {
-      this.artisanService
-        .getArtisanByName(name)
-        .subscribe((artisan) => (this.artisan = artisan));
+  name: string = '';
+  subject: string = '';
+  message: string = '';
+
+  onSubmit() {
+    if (this.name && this.subject && this.message) {
+      (error: any) => {
+        console.error(
+          'Une erreur est survenue lors de la soumission du formulaire.'
+        );
+      };
+    } else {
+      console.error('Veuillez remplir tous les champs du formulaire.');
     }
+  }
+
+  sanitizeInput(input: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(input);
+  }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      const name = params.get('name');
+      if (name) {
+        this.artisanService.getArtisanByName(name).subscribe((artisan) => {
+          this.artisan = artisan;
+        });
+      }
+    });
   }
 }

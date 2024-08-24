@@ -19,6 +19,7 @@ p {
 }
 .home {
   margin-left: 20px;
+  margin-top: 15px;
 }
 .card-title {
   color: #00497c;
@@ -55,4 +56,9 @@ p:hover {
 }
 .red::before {
   background-color: #cd2c2e;
+}
+
+.boucle {
+  padding: 0;
+  margin-right: 0;
 }

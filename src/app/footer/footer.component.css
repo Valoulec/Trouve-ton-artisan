@@ -9,8 +9,7 @@ li {
   padding: 20px;
 }
 img {
-  margin-left: 100px;
-  width: 300px;
+  width: 400px;
   height: auto;
   image-rendering: optimizeQuality;
   object-fit: cover;
@@ -31,4 +30,10 @@ hr {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 740px) {
+  .legal {
+    display: flex;
+    flex-direction: column;
+  }
 }

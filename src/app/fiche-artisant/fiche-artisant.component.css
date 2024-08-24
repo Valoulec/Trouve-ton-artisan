@@ -7,17 +7,19 @@ h2 {
   padding-left: 20px;
   display: flex;
   flex-direction: row;
+  padding: 10px;
 }
 .donner {
   width: 50%;
   padding: 20px;
 }
 .contact {
-  margin: 20px;
+  padding-left: 20px;
   border-left: #00497c solid 5px;
   border-radius: bold;
   padding-left: 20px;
   width: 50%;
+  margin-bottom: 10px;
 }
 .input {
   width: 70%;
@@ -54,7 +56,33 @@ h2 {
 }
 p {
   color: #384050;
+  padding-top: 10px;
 }
 label {
   color: #384050;
+}
+.site {
+  padding-top: 10px;
+}
+/* Media Queries pour les écrans de taille moyenne (tablette) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Media Queries pour les grands écrans (desktop) */
+@media only screen and (min-width: 1200px) {
+}
+@media only screen and (max-width: 740px) {
+  .contact {
+    border: none;
+    width: 100%;
+    padding-left: 0;
+  }
+  .fiche {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .donner {
+    width: 100%;
+  }
 }
